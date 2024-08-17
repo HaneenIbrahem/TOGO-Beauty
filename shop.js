@@ -233,3 +233,4 @@ clearButtons.forEach(button => {
 document.querySelector('.back-button').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.remove('active');
 });
+
