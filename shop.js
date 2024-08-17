@@ -75,6 +75,7 @@ const productsPerPage = 9;
 let filters = {};
 
 const getProducts = async () => {
+    document.getElementById("loader").style.display = "block"; // Show the loader
     let url = "http://makeup-api.herokuapp.com/api/v1/products.json";
 
     if (filters.brand || filters.category || filters.minPrice || filters.maxPrice) {
@@ -101,6 +102,8 @@ const getProducts = async () => {
     } catch (error) {
         console.error("Error fetching the products:", error);
         return [];
+    } finally {
+        document.getElementById("loader").style.display = "none"; // Hide the loader
     }
 };
 
