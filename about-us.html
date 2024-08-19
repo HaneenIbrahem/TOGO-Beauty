@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TOGO Beauty</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.navbar-left .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar-left .logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar-left .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #db7093;
+    /* Hot Pink on hover */
+}
+
+.dropdown-content {
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    /* Light Pink for dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #db7093;
+    /* Hot Pink on hover */
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right input[type="text"] {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-right: 15px;
+    width: 200px;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon svg {
+    width: 24px;
+    height: auto;
+}
+
+.cart-count {
+    background-color: #db7093;
+    /* Deep Pink */
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+@media (max-width:950px) {
+    .navbar-left a img {
+        display: none;
+    }
+
+    .navbar-left .logo span {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .nav-links li {
+        display: none;
+    }
+
+    @media (max-width:415px) {
+
+        .navbar-right input {
+            display: none;
+        }
+    }
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            background-image: url('./imgs/beauty_background2.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: #494545;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.content-left, .content-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.image-left, .image-right {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+    }
+
+    .image-left, .image-right {
+        max-width: 100%;
+    }
+
+    .content-left, .content-right {
+        padding: 10px;
+    }
+}
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #db7093;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .mission, .vision, .values {
+            text-align: center;
+        }
+
+        .values-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.values-list li {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.values-list li svg {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .values-list li {
+        width: 45%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .values-list li {
+        width: 100%; 
+        margin-bottom: 10px;
+    }
+}
+
+.team {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.team h2 {
+    font-size: 2em;
+    color: #db7093;
+    margin-bottom: 20px;
+}
+
+.team-member {
+    display: inline-block;
+    width: 20%;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 5px solid #db7093;
+}
+
+.team-member h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+        @media (max-width: 768px) {
+    .mission {
+        flex-direction: column-reverse;
+    }
+    .team-member {
+        width: 90%;
+    }
+}
+/* start of footer section */
+
+.newsletter-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.newsletter-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form input[type="email"] {
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    outline: none;
+    width: 400px;
+}
+
+.newsletter-form button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 950px) {
+    .newsletter-form {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .newsletter-form input[type="email"] {
+        width: calc(100% - 60px); /* Adjust for button width */
+    }
+
+    .newsletter-form button {
+        width: 60px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Media query for max-width: 400px */
+@media (max-width: 400px) {
+    .newsletter-section {
+        padding: 30px 10px;
+    }
+
+    .newsletter-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none; /* Optional: Remove shadow on smaller screens */
+    }
+
+    .newsletter-form input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px; /* Add margin to separate input and button */
+    }
+
+    .newsletter-form button {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+.product-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    width: 150px; /* Set a fixed width for each item */
+    height: 150px; /* Set a fixed height for each item */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-item img {
+    width: 100%; /* Ensure the image fills the width */
+    height: 100%; /* Ensure the image fills the height */
+    object-fit: cover; /* Ensures the image scales and crops to fill the box */
+    border-radius: 10px;
+}
+
+.footer-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    color: #999;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #999;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a svg {
+    width: 24px;
+    margin-right: 10px;
+    color: #999;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.payment-options svg {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.footer-section p, .footer-section a {
+    color: black;
+}
+
+/* end of footer section */
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Main navigation bar -->
+        <nav class="navbar">
+            
+            <div class="navbar-left">
+                <a href="#" class="logo">
+                    <img src="./imgs/logo.png" alt="To Go Beauty logo">
+                    <span>To Go Beauty</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Categories</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Skin care</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Hair care</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <div class="navbar-right">
+                <!-- <input type="text" placeholder="Search..."> -->
+                <a href="#" class="cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+<div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to TOGO Beauty</h1>
+        <p>Your journey to discovering the best in beauty begins here.</p>
+    </div>
+
+    <!-- Our Story Section -->
+<div class="section story">
+    <div class="content-left">
+        <h2>Our Story</h2>
+        <p>TOGO Beauty was born out of a passion for high-quality skincare and makeup. Our journey began with the desire to offer curated beauty products that cater to your unique needs, ensuring that you find exactly what you’re looking for. Over the years, we have grown into a trusted name in the beauty industry, known for our dedication to quality, customer satisfaction, and innovation.</p>
+    </div>
+    <div class="image-right">
+        <img src="./imgs/00.avif" alt="Our Story Image">
+    </div>
+</div>
+
+<!-- Mission Section -->
+<div class="section mission">
+    <div class="image-left">
+        <img src="./imgs/000.jpg" alt="Our Mission Image">
+    </div>
+    <div class="content-right">
+        <h2>Our Mission</h2>
+        <p>Our mission is to empower individuals by providing them with the best beauty products available. We believe that beauty should be accessible to everyone, and we strive to make high-quality products available at unbeatable prices.</p>
+    </div>
+</div>
+
+<!-- Vision Section -->
+<div class="section vision">
+    <div class="content-left">
+        <h2>Our Vision</h2>
+        <p>To be a leading beauty brand recognized for our commitment to quality, innovation, and customer satisfaction. We envision a world where everyone has the confidence to express their unique beauty.</p>
+    </div>
+    <div class="image-right">
+        <img src="./imgs/1.jpg" alt="Our Vision Image">
+    </div>
+</div>
+    <!-- Our Values Section -->
+    <div class="section values">
+        <h2>Our Values</h2>
+        <ul class="values-list">
+            <li>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.003 512.003" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon style="fill:#FFD652;" points="484.055,435.462 421.343,441.434 415.371,504.146 264.564,353.339 333.248,284.656 "></polygon> <polygon style="fill:#FB9D46;" points="345.634,401.068 357.414,361.774 397.996,367.765 398.1,349.508 333.248,284.656 264.564,353.339 303.151,391.927 308.384,383.887 "></polygon> <polygon style="fill:#FFD652;" points="27.948,435.462 90.659,441.434 96.632,504.146 247.438,353.339 178.754,284.656 "></polygon> <polygon style="fill:#FB9D46;" points="178.754,284.656 112.509,350.9 112.451,366.416 153.087,360.809 164.497,400.212 201.906,383.384 207.935,392.842 247.438,353.339 "></polygon> <polygon style="fill:#458FDE;" points="93.408,96.741 129.531,91.686 129.739,55.21 165.824,60.537 176.3,25.597 209.422,40.874 229.317,10.301 256.794,34.29 284.496,10.562 304.102,41.321 337.367,26.358 347.513,61.394 383.646,56.408 383.51,92.884 419.584,98.282 409.177,133.24 442.269,148.582 422.435,179.194 449.865,203.237 422.209,227.02 441.754,257.818 408.518,272.846 418.595,307.902 382.471,312.958 382.263,349.434 346.179,344.107 335.703,379.047 302.58,363.77 282.685,394.342 255.208,370.353 227.505,394.082 207.9,363.323 174.635,378.286 164.49,343.25 128.356,348.234 128.492,311.76 92.418,306.362 102.825,271.404 69.732,256.062 89.568,225.45 62.138,201.407 89.794,177.624 70.249,146.826 103.484,131.798 "></polygon> <circle style="fill:#FB9D46;" cx="256.001" cy="202.324" r="152.036"></circle> <circle style="fill:#FFD652;" cx="256.001" cy="202.324" r="130.92"></circle> <polygon style="fill:#FF7452;" points="323.573,115.61 188.43,115.61 144.086,183.182 256.001,316.213 367.916,183.182 "></polygon> <g> <polygon style="fill:#E24642;" points="255.117,115.61 188.43,115.61 144.086,183.182 256.001,316.213 259.066,312.569 220.104,181.07 "></polygon> <path style="fill:#E24642;" d="M448.157,35.369c-12.321,15.71-29.89,18.487-33.786,19.004c3.896,0.517,21.464,3.294,33.786,19.004 c8.615,10.991,10.189,22.594,10.558,27.451c0.37-4.857,1.943-16.46,10.558-27.451c12.321-15.71,29.89-18.487,33.786-19.004 c-3.896-0.517-21.464-3.294-33.786-19.004c-8.615-10.991-10.188-22.594-10.558-27.451 C458.346,12.775,456.773,24.378,448.157,35.369z"></path> <path style="fill:#E24642;" d="M63.845,35.369c12.321,15.71,29.89,18.487,33.786,19.004c-3.896,0.517-21.464,3.294-33.786,19.004 c-8.615,10.991-10.188,22.594-10.558,27.451c-0.37-4.857-1.943-16.46-10.558-27.451c-12.321-15.71-29.89-18.487-33.786-19.004 c3.896-0.517,21.464-3.294,33.786-19.004c8.615-10.991,10.188-22.594,10.558-27.451C53.657,12.775,55.23,24.378,63.845,35.369z"></path> <path style="fill:#E24642;" d="M266.559,434.463c12.321,15.71,29.89,18.487,33.786,19.004c-3.896,0.517-21.464,3.294-33.786,19.004 c-8.615,10.991-10.189,22.594-10.558,27.451c-0.37-4.857-1.943-16.46-10.558-27.451c-12.321-15.71-29.89-18.487-33.786-19.004 c3.896-0.517,21.464-3.294,33.786-19.004c8.615-10.991,10.188-22.594,10.558-27.451 C256.371,411.869,257.944,423.472,266.559,434.463z"></path> </g> <path d="M391.519,331.728c-0.383-0.383-0.796-0.718-1.231-1.006l0.062-10.872l29.342-4.106c2.272-0.318,4.294-1.606,5.543-3.53 c1.25-1.924,1.604-4.295,0.969-6.501l-8.185-28.475l26.996-12.207c2.09-0.946,3.668-2.75,4.325-4.949 c0.657-2.198,0.328-4.574-0.902-6.51l-15.876-25.016l22.463-19.318c1.739-1.496,2.745-3.673,2.756-5.966 c0.011-2.293-0.973-4.48-2.699-5.992l-22.281-19.53l16.111-24.864c1.247-1.925,1.598-4.296,0.963-6.501 c-0.636-2.205-2.196-4.025-4.277-4.99l-26.88-12.462l8.454-28.397c0.655-2.198,0.323-4.573-0.908-6.509 c-1.231-1.935-3.241-3.241-5.51-3.581l-29.302-4.384l0.111-29.628c0.008-2.294-0.978-4.479-2.705-5.99 c-1.725-1.511-4.018-2.194-6.296-1.885l-29.35,4.049l-8.241-28.458c-0.638-2.203-2.2-4.023-4.282-4.986 c-2.083-0.961-4.48-0.975-6.572-0.034l-27.02,12.153l-15.923-24.98c-1.233-1.934-3.244-3.239-5.513-3.577 c-2.269-0.336-4.574,0.327-6.315,1.819l-22.502,19.275L234.525,4.336c-1.728-1.509-4.026-2.195-6.298-1.878 c-2.272,0.316-4.296,1.602-5.547,3.524l-16.16,24.834l-26.904-12.409c-2.082-0.961-4.481-0.971-6.572-0.027 c-2.09,0.944-3.671,2.747-4.33,4.944l-8.51,28.38l-29.31-4.327c-2.267-0.332-4.573,0.33-6.314,1.825 c-1.74,1.494-2.748,3.67-2.761,5.963l-0.169,29.629l-29.342,4.107c-2.272,0.319-4.294,1.606-5.543,3.53 c-1.25,1.924-1.604,4.295-0.969,6.501l8.185,28.475l-26.996,12.207c-2.089,0.946-3.668,2.75-4.325,4.95 c-0.657,2.197-0.328,4.573,0.902,6.509l15.876,25.015l-22.463,19.318c-1.739,1.496-2.745,3.673-2.756,5.966 c-0.011,2.293,0.973,4.48,2.699,5.992l22.281,19.53l-16.112,24.865c-1.247,1.925-1.598,4.296-0.963,6.501 c0.636,2.205,2.197,4.025,4.278,4.99l26.88,12.461l-8.454,28.397c-0.655,2.198-0.323,4.573,0.908,6.509 c1.231,1.935,3.241,3.241,5.51,3.581l29.302,4.385l-0.05,13.302c-0.355,0.252-0.698,0.53-1.017,0.848L96.254,355.96 c-3.092,3.093-3.092,8.106,0,11.199c1.546,1.546,3.573,2.319,5.599,2.319s4.053-0.773,5.599-2.319l14.407-14.407 c0.366,0.527,0.79,1.016,1.282,1.446c1.726,1.512,4.022,2.198,6.296,1.885l29.35-4.049l8.241,28.458 c0.638,2.203,2.2,4.023,4.282,4.985c2.083,0.962,4.481,0.977,6.572,0.034l27.02-12.154l4.407,6.914L102.92,486.659l-4.378-45.974 c-0.36-3.78-3.352-6.772-7.132-7.132l-45.975-4.378l35.623-35.623c3.092-3.093,3.092-8.106,0-11.199 c-3.092-3.091-8.106-3.091-11.198,0l-47.511,47.511c-2.169,2.169-2.89,5.393-1.852,8.28c1.038,2.884,3.648,4.912,6.701,5.203 l56.199,5.353l5.352,56.199c0.621,6.523,8.84,9.49,13.483,4.849L218.03,393.949l2.799,4.391c1.233,1.934,3.244,3.239,5.513,3.577 c2.271,0.339,4.574-0.327,6.315-1.819l22.502-19.275l22.319,19.486c1.452,1.268,3.305,1.954,5.207,1.954 c0.362,0,0.726-0.024,1.091-0.075c2.272-0.316,4.296-1.602,5.547-3.524l3.692-5.673l116.758,116.757 c4.639,4.637,12.861,1.679,13.483-4.849l5.352-56.199l56.199-5.353c3.053-0.29,5.663-2.318,6.701-5.203 c1.038-2.885,0.316-6.111-1.852-8.28L391.519,331.728z M281.022,382.379l-20.606-17.991c-1.491-1.302-3.349-1.954-5.208-1.954 c-1.834,0-3.669,0.635-5.151,1.905l-20.776,17.796l-1.286-2.018c-0.129-1.837-0.888-3.638-2.293-5.044 c-0.536-0.536-1.133-0.973-1.765-1.323l-9.36-14.684c-2.114-3.317-6.341-4.58-9.926-2.966l-24.948,11.221l-7.609-26.276 c-1.094-3.777-4.794-6.181-8.688-5.642l-27.099,3.739l0.102-27.354c0.015-3.933-2.858-7.28-6.747-7.86l-27.055-4.049l7.806-26.218 c1.122-3.768-0.692-7.79-4.259-9.443l-24.818-11.504l14.875-22.958c2.138-3.299,1.531-7.669-1.426-10.26l-20.571-18.032 l20.74-17.837c2.982-2.565,3.63-6.927,1.522-10.247l-14.658-23.097l24.925-11.271c3.582-1.62,5.433-5.624,4.348-9.403l-7.557-26.289 l27.092-3.792c3.894-0.546,6.798-3.865,6.82-7.797l0.155-27.356l27.062,3.995c3.892,0.575,7.611-1.794,8.741-5.56l7.856-26.203 l24.84,11.458c3.571,1.645,7.809,0.422,9.953-2.872l14.921-22.929l20.606,17.991c2.963,2.587,7.374,2.608,10.36,0.05l20.776-17.796 l14.703,23.068c2.114,3.316,6.339,4.58,9.926,2.966l24.948-11.221l7.609,26.276c1.094,3.778,4.799,6.184,8.688,5.642l27.099-3.739 l-0.102,27.355c-0.015,3.933,2.858,7.28,6.748,7.86l27.054,4.048l-7.806,26.218c-1.122,3.768,0.692,7.79,4.259,9.443l24.819,11.505 l-14.875,22.957c-2.138,3.299-1.531,7.669,1.426,10.26l20.571,18.032l-20.74,17.837c-2.982,2.565-3.63,6.927-1.522,10.247 l14.658,23.097l-24.925,11.271c-3.583,1.62-5.434,5.623-4.348,9.403l7.556,26.291l-27.091,3.791 c-3.894,0.546-6.798,3.865-6.82,7.797l-0.155,27.356l-27.062-3.995c-3.886-0.568-7.611,1.793-8.741,5.56l-7.856,26.203 l-24.84-11.458c-3.572-1.647-7.809-0.423-9.953,2.872L281.022,382.379z M420.593,433.553c-3.78,0.36-6.773,3.352-7.132,7.132 l-4.378,45.974L301.843,379.421l3.639-5.592l26.904,12.409c2.083,0.962,4.481,0.972,6.572,0.027c2.09-0.944,3.671-2.747,4.33-4.944 l8.51-28.38l29.31,4.327c2.271,0.335,4.574-0.33,6.314-1.825c1.01-0.868,1.764-1.969,2.23-3.185l76.917,76.916L420.593,433.553z"></path> <path d="M399.395,273.275c1.943-3.918,0.34-8.669-3.578-10.612c-3.917-1.942-8.669-0.339-10.612,3.578 C360.683,315.709,311.174,346.44,256,346.44c-79.466,0-144.117-64.65-144.117-144.117S176.534,58.205,256,58.205 s144.117,64.65,144.117,144.117c0,9.388-0.908,18.775-2.698,27.903c-0.841,4.291,1.955,8.453,6.247,9.294 c4.288,0.844,8.453-1.955,9.294-6.246c1.986-10.129,2.993-20.542,2.993-30.95c0-88.199-71.754-159.954-159.954-159.954 S96.046,114.125,96.046,202.324S167.801,362.278,256,362.278c30.373,0,59.929-8.551,85.473-24.729 C366.324,321.809,386.353,299.583,399.395,273.275z"></path> <path d="M323.573,107.692H188.43c-2.668,0-5.157,1.343-6.621,3.574l-44.344,67.571c-1.919,2.926-1.692,6.765,0.561,9.442 L249.941,321.31c1.505,1.789,3.723,2.821,6.059,2.821s4.555-1.033,6.059-2.821l111.915-133.031c2.253-2.678,2.481-6.516,0.561-9.442 l-44.344-67.571C328.728,109.035,326.241,107.692,323.573,107.692z M187.104,132.063l21.914,41.089H160.14L187.104,132.063z M279.524,188.989l-23.522,89.679l-23.523-89.679H279.524z M235.413,173.152l20.588-38.603l20.588,38.603H235.413z M268.072,123.529 h42.502l-20.903,40.5L268.072,123.529z M222.216,164.244l-21.715-40.715h43.428L222.216,164.244z M216.106,188.989l25.727,98.082 l-82.513-98.082H216.106z M295.896,188.989h56.786l-82.513,98.082L295.896,188.989z M302.784,173.152l21.606-41.862l27.473,41.862 H302.784z"></path> <path d="M504.101,46.524c-5.376-0.715-18.924-3.708-28.596-16.04c-6.872-8.767-8.522-18.278-8.894-23.166 C466.296,3.19,462.855,0,458.716,0s-7.582,3.19-7.896,7.318c-0.373,4.889-2.023,14.4-8.894,23.166 c-9.673,12.333-23.221,15.326-28.596,16.04c-3.936,0.523-6.875,3.879-6.875,7.85s2.94,7.326,6.875,7.85 c5.376,0.715,18.924,3.708,28.596,16.04c6.872,8.767,8.522,18.278,8.894,23.166c0.315,4.128,3.755,7.318,7.896,7.318 c4.141,0,7.582-3.19,7.896-7.318c0.373-4.889,2.023-14.4,8.893-23.165c9.674-12.334,23.222-15.327,28.597-16.041 c3.936-0.523,6.875-3.879,6.875-7.85S508.037,47.048,504.101,46.524z M463.041,68.493c-1.647,2.101-3.08,4.224-4.326,6.342 c-1.247-2.118-2.681-4.242-4.328-6.343c-4.97-6.337-10.66-10.873-16.218-14.118c5.559-3.246,11.25-7.781,16.218-14.118l0.001-0.001 c1.647-2.101,3.08-4.224,4.326-6.342c1.247,2.118,2.681,4.242,4.328,6.343c4.97,6.337,10.66,10.873,16.218,14.118 C473.703,57.619,468.011,62.156,463.041,68.493z"></path> <path d="M36.497,78.264c6.872,8.767,8.522,18.278,8.894,23.166c0.315,4.128,3.755,7.318,7.896,7.318s7.582-3.19,7.896-7.318 c0.373-4.889,2.023-14.4,8.893-23.165c9.674-12.334,23.222-15.327,28.597-16.041c3.936-0.523,6.875-3.879,6.875-7.85 s-2.94-7.326-6.875-7.85c-5.375-0.715-18.923-3.708-28.596-16.04c-6.872-8.767-8.522-18.278-8.894-23.166 C60.868,3.19,57.427,0,53.287,0s-7.582,3.19-7.896,7.318c-0.373,4.889-2.023,14.4-8.893,23.165 C26.825,42.817,13.276,45.81,7.9,46.524c-3.936,0.524-6.875,3.879-6.875,7.85s2.94,7.326,6.875,7.85 C13.276,62.937,26.825,65.931,36.497,78.264z M48.962,40.255c1.647-2.101,3.08-4.224,4.326-6.342 c1.246,2.118,2.68,4.241,4.326,6.342l0.001,0.001c4.97,6.337,10.66,10.873,16.219,14.118c-5.559,3.246-11.25,7.782-16.22,14.119 c-1.647,2.101-3.08,4.224-4.326,6.342c-1.247-2.118-2.681-4.242-4.328-6.343c-4.969-6.337-10.66-10.873-16.218-14.118 C38.299,51.128,43.991,46.592,48.962,40.255z"></path> <path d="M301.387,445.617c-5.375-0.715-18.923-3.708-28.596-16.04c-6.872-8.767-8.522-18.278-8.894-23.166 c-0.315-4.128-3.756-7.318-7.896-7.318c-4.141,0-7.582,3.19-7.896,7.318c-0.373,4.889-2.023,14.4-8.893,23.165 c-9.674,12.334-23.222,15.327-28.597,16.041c-3.936,0.523-6.875,3.879-6.875,7.85c0,3.971,2.94,7.326,6.875,7.85 c5.376,0.715,18.924,3.708,28.596,16.04c6.872,8.767,8.522,18.278,8.894,23.166c0.315,4.128,3.756,7.318,7.896,7.318 c4.141,0,7.582-3.19,7.896-7.318c0.373-4.889,2.023-14.4,8.893-23.165c9.674-12.334,23.222-15.327,28.597-16.041 c3.936-0.523,6.875-3.879,6.875-7.85C308.263,449.496,305.323,446.141,301.387,445.617z M260.327,467.587 c-1.647,2.101-3.08,4.224-4.326,6.342c-1.247-2.118-2.681-4.242-4.328-6.343c-4.97-6.337-10.66-10.873-16.218-14.118 c5.559-3.246,11.25-7.782,16.22-14.119c1.647-2.101,3.08-4.224,4.326-6.342c1.246,2.118,2.68,4.241,4.326,6.342l0.001,0.001 c4.97,6.337,10.66,10.873,16.218,14.118C270.988,456.713,265.297,461.25,260.327,467.587z"></path> </g></svg>
+                <h3>Quality</h3>
+                <p>We prioritize quality in everything we do, from the products we offer to the service we provide.</p>
+            </li>
+            <li>
+                <svg viewBox="0 0 64 64" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style> .cls-1 { fill: #f76c5e; } .cls-2 { fill: #ffbc0a; } .cls-3 { fill: #a3cef1; } .cls-4 { fill: #6096ba; } .cls-5 { fill: #274c77; } </style></defs><path class="cls-2" d="M36,22v-2.81c1.09-.55,2.06-1.32,2.85-2.26-.26-.58-.25-1.27,.08-1.87,.34-.59,.92-.94,1.54-1,.34-.96,.53-1.99,.53-3.07s-.19-2.11-.53-3.07c-.62-.06-1.21-.41-1.54-1-.34-.59-.34-1.29-.08-1.87-1.32-1.57-3.14-2.68-5.22-3.06-.36,.52-.96,.86-1.63,.86s-1.27-.34-1.63-.86c-2.08,.39-3.9,1.5-5.22,3.06,.26,.58,.25,1.27-.08,1.87-.34,.59-.92,.94-1.54,1-.34,.96-.53,1.99-.53,3.07s.19,2.11,.53,3.07c.62,.06,1.21,.41,1.54,1,.34,.59,.34,1.29,.08,1.87,.78,.94,1.75,1.7,2.85,2.26v2.81"></path><path class="cls-5" d="M32,62h-3l-2-2H10v-24h4v18s12.15-3,18,8Z"></path><path class="cls-5" d="M50,54v-18h4v24h-17s-2,2-2,2h-3c5.85-11,18-8,18-8Z"></path><path class="cls-4" d="M32,62c-5.85-11-18-8-18-8v-21l6-2v19c6.63,0,12,5.37,12,12Z"></path><path class="cls-4" d="M44,31l6,2v21s-12.15-3-18,8c0-6.63,5.37-12,12-12V31Z"></path><path class="cls-3" d="M32,42c0-6.63-5.37-12-12-12v20c6.63,0,12,5.37,12,12,0-6.63,5.37-12,12-12V30c-6.63,0-12,5.37-12,12Z"></path><circle class="cls-3" cx="32" cy="11" r="5"></circle><rect class="cls-5" height="4" rx="1" ry="1" width="10" x="27" y="22"></rect><rect class="cls-1" height="2" width="2" x="21" y="17"></rect><rect class="cls-1" height="2" width="2" x="18" y="10"></rect><rect class="cls-1" height="2" width="2" x="14" y="13"></rect><rect class="cls-1" height="2" width="2" x="11" y="17"></rect><rect class="cls-1" height="2" width="2" x="11" y="22"></rect><rect class="cls-1" height="2" width="2" x="11" y="28"></rect><rect class="cls-1" height="2" width="2" x="44" y="10"></rect><rect class="cls-1" height="2" width="2" x="48" y="13"></rect><rect class="cls-1" height="2" width="2" x="51" y="17"></rect><rect class="cls-1" height="2" width="2" x="51" y="22"></rect><rect class="cls-1" height="2" width="2" x="51" y="28"></rect><rect class="cls-1" height="2" width="2" x="21" y="21"></rect><rect class="cls-1" height="2" width="2" x="21" y="25"></rect><rect class="cls-1" height="2" width="2" x="41" y="17"></rect><rect class="cls-1" height="2" width="2" x="41" y="21"></rect><rect class="cls-1" height="2" width="2" x="41" y="25"></rect><rect class="cls-1" height="2" width="2" x="31" y="28"></rect><rect class="cls-1" height="2" width="2" x="31" y="32"></rect></g></svg>
+                <h3>Innovation</h3>
+                <p>We are constantly seeking new ways to improve our products and services.</p>
+            </li>
+            <li>
+                <svg viewBox="0 0 120 120" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#FFAC5A;} .st1{fill:#3A485E;} .st2{fill:#FF9FB4;} .st3{fill:#FFD551;} .st4{fill:#EDBF9A;} .st5{fill:#FFD9B6;} .st6{fill:#FF778E;} </style> <g> <path class="st0" d="M80.8,62.9H39.2c-1.7,0-3-1.4-2.8-3.1l2-20.8C38.3,25.8,48,15,60,15l0,0c12,0,21.7,10.8,21.7,24l2,20.8 C83.8,61.5,82.4,62.9,80.8,62.9z"></path> <g> <path class="st1" d="M80.5,38h-3v10h3c1.7,0,3.1-1.1,3.1-2.6v-4.9C83.6,39.2,82.3,38,80.5,38z"></path> <path class="st1" d="M36.3,40.6v4.9c0,1.4,1.4,2.6,3.1,2.6h3V38h-3C37.7,38,36.3,39.2,36.3,40.6z"></path> </g> <path class="st2" d="M99.8,105H20V82.7c0-5.1,3.7-9.7,9.2-11.4l23-7c5.1-1.6,10.5-1.6,15.5,0l23,7c5.5,1.7,9.2,6.3,9.2,11.4 L99.8,105L99.8,105z"></path> <rect class="st3" height="2.9" width="13.3" x="65.3" y="87.2"></rect> <rect class="st4" height="23.5" width="16.9" x="51.5" y="50.4"></rect> <path class="st5" d="M79.1,38.7c0,13-8.6,26.2-19.2,26.2S40.8,51.7,40.8,38.7S49.4,17.9,60,17.9S79.1,25.7,79.1,38.7z"></path> <g> <path class="st1" d="M67.6,56.2c-1.4,0-1.7,0-3.4-0.1h-1.7v-1.3h1.7c7.7,0.1,10.3,0.2,12.7-1.8c2.5-2,2-7.2,2-7.3l1.3-0.1 c0,0.2,0.6,5.9-2.5,8.4C75.5,55.9,72.6,56.2,67.6,56.2z"></path> </g> <g> <path class="st6" d="M38.4,91.7h-0.6c-0.6,0-1.1,0.5-1.1,1.1V105h2.8V92.8C39.5,92.2,39,91.7,38.4,91.7z"></path> <path class="st6" d="M82.2,91.7h-0.6c-0.6,0-1.1,0.5-1.1,1.1V105h2.8V92.8C83.4,92.2,82.9,91.7,82.2,91.7z"></path> <polygon class="st6" points="68.4,66 60,73.7 51.5,66 50.2,64.9 41.2,67.7 54.7,79.7 60,73.9 65.2,79.7 78.7,67.7 69.7,64.9 "></polygon> <path class="st6" d="M61.2,57.7h4.6c0.7,0,1.3-0.6,1.2-1.2v-1.7c0-0.6-0.5-1.2-1.2-1.2h-4.6c-0.6,0-1.2,0.5-1.2,1.2v1.7 C60,57.1,60.5,57.7,61.2,57.7z"></path> </g> <path class="st0" d="M73.4,23.2c-1.2,2.7-2.9,5.1-4.9,7.2c-5,5.3-12.1,8.6-20,8.6c-2.7,0-5.3-0.4-7.8-1.1 c0.4-12.2,8.5-19.7,18.7-20c0.2,0,0.4,0,0.6,0C65.3,17.9,69.9,19.8,73.4,23.2z"></path> <path class="st0" d="M79,35.4c-3.9-0.9-7.5-2.6-10.5-5c2-2.1,3.7-4.5,4.9-7.2C76.3,26.2,78.4,30.3,79,35.4z"></path> </g> </g></svg>
+                <h3>Customer Focus</h3>
+                <p>Our customers are at the heart of everything we do. We strive to exceed their expectations.</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Our Team Section -->
+    <div class="section team">
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <img src="./imgs/Haneen-Ibrahem.jpg" alt="CEO">
+            <h3>Haneen Ibrahem</h3>
+            <p>Founder & CEO</p>
+        </div>
+        <div class="team-member">
+            <img src="./imgs/Haneen-Ibrahem.jpg" alt="CEO">
+            <h3>Haneen Ibrahem</h3>
+            <p>Founder & CEO</p>
+        </div>
+        <div class="team-member">
+            <img src="./imgs/Haneen-Ibrahem.jpg" alt="CEO">
+            <h3>Haneen Ibrahem</h3>
+            <p>Founder & CEO</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-section">
+    <div class="footer-column">
+        <h4>Discover Your Perfect Beauty Look</h4>
+        <div class="social-icons">
+            <a href="#"><svg fill="#999" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg></a>
+            <a href="#"><svg fill="#999" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a>
+            <a href="#"><svg fill="#999" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+            <a href="#"><svg fill="#999" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg></a>
+        </div>
+    </div>
+    <div class="footer-column Get-in">
+        <h4>Get in touch</h4>
+        <p style="color: #999"><a style="color: #999" href="mailto:help@beauty.io">help@beauty.io</a></p>
+        <p style="color: #999">+02 036 038 3996</p>
+        <p style="color: #999">3665 Paseo Place, Suite 0960, San Diego</p>
+    </div>
+    <div class="footer-column">
+        <h4>Information</h4>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Blog</a></li>
+            <li><a href="#">Start a Return</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping FAQs</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>Useful Links</h4>
+        <ul>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Contact & Support</a></li>
+            <li><a href="#">All Products</a></li>
+        </ul>
+    </div>
+    <div class="payment-options">
+        <svg viewBox="0 -140 780 780" enable-background="new 0 0 780 500" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M40,0h700c22.092,0,40,17.909,40,40v420c0,22.092-17.908,40-40,40H40c-22.091,0-40-17.908-40-40V40 C0,17.909,17.909,0,40,0z" fill="#0E4595"></path><path d="m293.2 348.73l33.361-195.76h53.36l-33.385 195.76h-53.336zm246.11-191.54c-10.57-3.966-27.137-8.222-47.822-8.222-52.725 0-89.865 26.55-90.18 64.603-0.299 28.13 26.514 43.822 46.752 53.186 20.771 9.595 27.752 15.714 27.654 24.283-0.131 13.121-16.586 19.116-31.922 19.116-21.357 0-32.703-2.967-50.227-10.276l-6.876-3.11-7.489 43.823c12.463 5.464 35.51 10.198 59.438 10.443 56.09 0 92.5-26.246 92.916-66.882 0.199-22.269-14.016-39.216-44.801-53.188-18.65-9.055-30.072-15.099-29.951-24.268 0-8.137 9.668-16.839 30.557-16.839 17.449-0.27 30.09 3.535 39.938 7.5l4.781 2.26 7.232-42.429m137.31-4.223h-41.232c-12.773 0-22.332 3.487-27.941 16.234l-79.244 179.4h56.031s9.16-24.123 11.232-29.418c6.125 0 60.555 0.084 68.338 0.084 1.596 6.853 6.49 29.334 6.49 29.334h49.514l-43.188-195.64zm-65.418 126.41c4.412-11.279 21.26-54.723 21.26-54.723-0.316 0.522 4.379-11.334 7.074-18.684l3.605 16.879s10.219 46.729 12.354 56.528h-44.293zm-363.3-126.41l-52.24 133.5-5.567-27.13c-9.725-31.273-40.025-65.155-73.898-82.118l47.766 171.2 56.456-0.064 84.004-195.39h-56.521" fill="#ffffff"></path><path d="m146.92 152.96h-86.041l-0.681 4.073c66.938 16.204 111.23 55.363 129.62 102.41l-18.71-89.96c-3.23-12.395-12.597-16.094-24.186-16.527" fill="#F2AE14"></path></g></svg>
+        <svg viewBox="0 -9 58 58" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="0.5" y="0.5" width="57" height="39" rx="3.5" fill="white" stroke="#F3F3F3"></rect> <path d="M34.3102 28.9765H23.9591V10.5122H34.3102V28.9765Z" fill="#FF5F00"></path> <path d="M24.6223 19.7429C24.6223 15.9973 26.3891 12.6608 29.1406 10.5107C27.1285 8.93843 24.5892 7.99998 21.8294 7.99998C15.2961 7.99998 10 13.2574 10 19.7429C10 26.2283 15.2961 31.4857 21.8294 31.4857C24.5892 31.4857 27.1285 30.5473 29.1406 28.975C26.3891 26.8249 24.6223 23.4884 24.6223 19.7429" fill="#EB001B"></path> <path d="M48.2706 19.7429C48.2706 26.2283 42.9745 31.4857 36.4412 31.4857C33.6814 31.4857 31.1421 30.5473 29.1293 28.975C31.8815 26.8249 33.6483 23.4884 33.6483 19.7429C33.6483 15.9973 31.8815 12.6608 29.1293 10.5107C31.1421 8.93843 33.6814 7.99998 36.4412 7.99998C42.9745 7.99998 48.2706 13.2574 48.2706 19.7429" fill="#F79E1B"></path> </g></svg>
+        <svg viewBox="0 -11 70 70" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="0.5" y="0.5" width="69" height="47" rx="5.5" fill="white" stroke="#D9D9D9"></rect> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1601 16.6863C18.5726 17.3901 17.6325 17.9452 16.6924 17.8659C16.5749 16.9143 17.0352 15.9032 17.5737 15.2787C18.1613 14.5551 19.1895 14.0397 20.0219 14C20.1198 14.9913 19.7379 15.9627 19.1601 16.6863ZM20.012 18.0542C19.1838 18.006 18.4281 18.3064 17.8177 18.549C17.4249 18.7051 17.0923 18.8373 16.8392 18.8373C16.5552 18.8373 16.2089 18.6981 15.82 18.5417L15.82 18.5417L15.82 18.5417L15.82 18.5417C15.3104 18.3368 14.7278 18.1025 14.1169 18.1137C12.7166 18.1335 11.4142 18.9365 10.6993 20.2152C9.23044 22.7726 10.3174 26.5593 11.7373 28.6409C12.4326 29.6718 13.265 30.8018 14.3617 30.7622C14.8442 30.7438 15.1913 30.5947 15.5505 30.4404C15.9641 30.2628 16.3937 30.0782 17.0645 30.0782C17.712 30.0782 18.1228 30.2579 18.5172 30.4305C18.8921 30.5945 19.2522 30.752 19.7868 30.7424C20.9227 30.7225 21.6376 29.7115 22.3328 28.6806C23.0831 27.5741 23.4129 26.4943 23.4629 26.3304L23.4688 26.3114C23.4676 26.3102 23.4583 26.3059 23.4419 26.2984C23.1911 26.1821 21.274 25.2937 21.2557 22.9114C21.2372 20.9118 22.7762 19.8987 23.0185 19.7392C23.0332 19.7295 23.0432 19.723 23.0477 19.7196C22.0684 18.2525 20.5408 18.0939 20.012 18.0542ZM27.8755 30.6333V15.1796H33.6041C36.5615 15.1796 38.6277 17.2414 38.6277 20.2548C38.6277 23.2683 36.5223 25.3499 33.5258 25.3499H30.2453V30.6333H27.8755ZM30.2451 17.2018H32.9772C35.0336 17.2018 36.2087 18.312 36.2087 20.2648C36.2087 22.2175 35.0336 23.3377 32.9674 23.3377H30.2451V17.2018ZM46.452 28.7797C45.8253 29.989 44.4445 30.7523 42.9561 30.7523C40.7527 30.7523 39.2153 29.424 39.2153 27.4217C39.2153 25.4391 40.7038 24.2992 43.4555 24.1307L46.4128 23.9522V23.0998C46.4128 21.8409 45.6 21.1569 44.1508 21.1569C42.9561 21.1569 42.0845 21.7814 41.9083 22.733H39.7735C39.842 20.7307 41.7026 19.2735 44.2193 19.2735C46.9318 19.2735 48.6945 20.7108 48.6945 22.9412V30.6333H46.501V28.7797H46.452ZM43.5924 28.9185C42.3292 28.9185 41.5262 28.3039 41.5262 27.3622C41.5262 26.3908 42.2998 25.8257 43.7785 25.7365L46.4127 25.568V26.4403C46.4127 27.8876 45.1984 28.9185 43.5924 28.9185ZM55.9702 31.238C55.0204 33.9442 53.9334 34.8363 51.6224 34.8363C51.4461 34.8363 50.8585 34.8165 50.7214 34.7768V32.9232C50.8683 32.943 51.2307 32.9628 51.4167 32.9628C52.4645 32.9628 53.0521 32.5167 53.4144 31.357L53.6298 30.673L49.6149 19.4222H52.0924L54.8833 28.5517H54.9322L57.7231 19.4222H60.1321L55.9702 31.238Z" fill="#000000"></path> </g></svg>
+        <svg viewBox="0 -9 58 58" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="0.5" y="0.5" width="57" height="39" rx="3.5" fill="white" stroke="#F3F3F3"></rect> <path fill-rule="evenodd" clip-rule="evenodd" d="M27.9174 24.1182V19.6071V19.6062H30.3578C31.3639 19.6068 32.2095 19.2907 32.8945 18.6578C33.5868 18.0571 33.9738 17.1935 33.9541 16.2934C33.9678 15.3982 33.5815 14.541 32.8945 13.9422C32.2155 13.3059 31.3023 12.9587 30.3578 12.9778H26.4404V24.1182H27.9174ZM27.9174 18.2382V14.3494V14.3485H30.3945C30.9466 14.3334 31.4788 14.5487 31.856 14.9396C32.2355 15.2971 32.4496 15.7881 32.4496 16.3009C32.4496 16.8137 32.2355 17.3048 31.856 17.6622C31.4741 18.0449 30.9436 18.254 30.3945 18.2382H27.9174Z" fill="#5F6368"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M39.9431 17.0951C39.3113 16.5297 38.4496 16.2471 37.3578 16.2471C35.9554 16.2471 34.8963 16.7448 34.1807 17.7404L35.4817 18.5342C35.9624 17.8598 36.6153 17.5226 37.4404 17.5226C37.9664 17.5167 38.4755 17.703 38.8661 18.0444C39.2555 18.3564 39.4795 18.8215 39.4762 19.3111V19.6382C38.9086 19.3271 38.1863 19.1715 37.3092 19.1715C36.2817 19.1727 35.4603 19.4062 34.845 19.872C34.2297 20.3377 33.922 20.965 33.922 21.7537C33.9086 22.4719 34.2302 23.1577 34.7973 23.6204C35.3807 24.1182 36.1058 24.3671 36.9725 24.3671C37.9878 24.3671 38.8012 23.9315 39.4129 23.0604H39.4771V24.1182H40.8899V19.4204C40.8905 18.4355 40.5749 17.6604 39.9431 17.0951ZM35.9367 22.7182C35.6273 22.5021 35.4448 22.1544 35.4468 21.7848C35.4468 21.3697 35.6477 21.024 36.0523 20.7395C36.4529 20.4592 36.9532 20.3191 37.5532 20.3191C38.3771 20.3191 39.0193 20.4968 39.4798 20.8524C39.4798 21.4533 39.2352 21.9768 38.7459 22.4231C38.3052 22.8501 37.7077 23.0905 37.0844 23.0915C36.6689 23.099 36.2634 22.9672 35.9367 22.7182Z" fill="#5F6368"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M49 16.496L44.0679 27.4782H42.5431L44.3734 23.6355L41.1303 16.496H42.7358L45.0798 21.9715H45.1119L47.3917 16.496H49Z" fill="#5F6368"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9486 18.6347C21.9492 18.1986 21.9111 17.7632 21.8349 17.3334H15.6055V19.7983H19.1734C19.0259 20.5938 18.5493 21.2964 17.8541 21.7432V23.3432H19.9835C21.2303 22.2294 21.9486 20.5823 21.9486 18.6347Z" fill="#4285F4"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6055 24.8889C17.3881 24.8889 18.889 24.3217 19.9835 23.344L17.8541 21.744C17.2615 22.1333 16.4982 22.3555 15.6055 22.3555C13.8826 22.3555 12.4202 21.2302 11.8973 19.7137H9.70367V21.3626C10.8249 23.5244 13.1085 24.8887 15.6055 24.8889Z" fill="#34A853"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8973 19.7138C11.6208 18.9192 11.6208 18.0586 11.8973 17.264V15.6151H9.70367C8.76585 17.4232 8.76585 19.5546 9.70367 21.3627L11.8973 19.7138Z" fill="#FBBC04"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6055 14.6223C16.5475 14.6073 17.4577 14.9522 18.1395 15.5823V15.5823L20.0248 13.7556C18.8293 12.6677 17.2455 12.0704 15.6055 12.0889C13.1085 12.089 10.8249 13.4534 9.70367 15.6151L11.8973 17.264C12.4202 15.7476 13.8826 14.6223 15.6055 14.6223Z" fill="#EA4335"></path> </g></svg>
+        <svg viewBox="0 -139.5 750 750" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="paypal" fill-rule="nonzero"> <path d="M697.115385,0 L52.8846154,0 C23.7240385,0 0,23.1955749 0,51.7065868 L0,419.293413 C0,447.804425 23.7240385,471 52.8846154,471 L697.115385,471 C726.274038,471 750,447.804425 750,419.293413 L750,51.7065868 C750,23.1955749 726.274038,0 697.115385,0 Z" id="Shape" fill="#FFFFFF"> </path> <g id="Group" transform="translate(54.000000, 150.000000)"> <path d="M109.272795,8.45777679 C101.24875,2.94154464 90.7780357,0.176741071 77.8606518,0.176741071 L27.8515268,0.176741071 C23.8915714,0.176741071 21.7038036,2.15719643 21.2882232,6.11333036 L0.972553571,133.638223 C0.761419643,134.890696 1.07477679,136.03617 1.90975893,137.077509 C2.73996429,138.120759 3.78416964,138.639518 5.03473214,138.639518 L28.7887321,138.639518 C32.9550446,138.639518 35.2450357,136.663839 35.6653929,132.701973 L41.2905357,98.3224911 C41.4959375,96.6563482 42.2286964,95.3016518 43.4792589,94.2584018 C44.7288661,93.2170625 46.2918304,92.5358929 48.1671964,92.2234911 C50.0425625,91.9139554 51.8109286,91.7582321 53.4808929,91.7582321 C55.1460804,91.7582321 57.124625,91.8633214 59.4203482,92.0706339 C61.7103393,92.2789018 63.170125,92.3801696 63.7958839,92.3801696 C81.7145625,92.3801696 95.7793304,87.3311071 105.991143,77.2224732 C116.198179,67.1176607 121.307429,53.1054375 121.307429,35.1829375 C121.307429,22.8903571 117.293018,13.9826071 109.272795,8.45777679 Z M83.4877054,46.7484911 C82.4425446,54.0426429 79.7369732,58.8328036 75.3614375,61.1256607 C70.9849464,63.4213839 64.7340446,64.5620804 56.6087321,64.5620804 L46.2937411,64.8754375 L51.6083929,31.43125 C52.0230179,29.1412589 53.3767589,27.9948304 55.6705714,27.9948304 L61.6109821,27.9948304 C69.9416964,27.9948304 75.9881518,29.1957143 79.7388839,31.5879286 C83.4877054,33.985875 84.7382679,39.041625 83.4877054,46.7484911 Z" id="Shape" fill="#003087"> </path> <path d="M637.026411,0.176741071 L613.899125,0.176741071 C611.601491,0.176741071 610.248705,1.32316964 609.835991,3.61507143 L589.518411,133.638223 L589.205054,134.263027 C589.205054,135.310098 589.622545,136.295071 590.457527,137.233232 C591.286777,138.169482 592.332893,138.638562 593.581545,138.638562 L614.212482,138.638562 C618.16575,138.638562 620.354473,136.662884 620.776741,132.701018 L641.092411,4.86276786 L641.092411,4.55227679 C641.091455,1.63557143 639.732938,0.176741071 637.026411,0.176741071 Z" id="Shape" fill="#009CDE"> </path> <path d="M357.599732,50.4973125 C357.599732,49.4578839 357.18033,48.4662232 356.352036,47.5299732 C355.516098,46.5927679 354.576982,46.1217768 353.538509,46.1217768 L329.471152,46.1217768 C327.174473,46.1217768 325.300063,47.1688482 323.845054,49.24675 L290.714223,98.0081786 L276.962812,51.1240268 C275.916696,47.7917411 273.62575,46.1217768 270.086152,46.1217768 L246.641687,46.1217768 C245.597482,46.1217768 244.659321,46.5918125 243.831027,47.5299732 C242.995089,48.4662232 242.580464,49.4588393 242.580464,50.4973125 C242.580464,50.9176696 244.612509,57.0615714 248.674687,68.9385714 C252.736866,80.8174821 257.113357,93.6326429 261.80225,107.38692 C266.491143,121.137375 268.936857,128.434393 269.147036,129.262688 C252.059518,152.602063 243.51767,165.104821 243.51767,166.769054 C243.51767,169.480357 244.871411,170.833143 247.580804,170.833143 L271.648161,170.833143 C273.940062,170.833143 275.814473,169.793714 277.274259,167.709125 L356.976839,52.6850804 C357.391464,52.2704554 357.599732,51.5443839 357.599732,50.4973125 Z" id="Shape" fill="#003087"> </path> <path d="M581.704545,46.1217768 L557.948634,46.1217768 C555.030018,46.1217768 553.263562,49.5601071 552.638759,56.4367679 C547.215196,48.1060536 537.323429,43.9330536 522.943393,43.9330536 C507.940464,43.9330536 495.174982,49.5601071 484.655545,60.8123036 C474.13133,72.0654554 468.872089,85.2990625 468.872089,100.508348 C468.872089,112.80475 472.465187,122.597161 479.653295,129.887491 C486.842357,137.185464 496.479045,140.827286 508.568134,140.827286 C514.608857,140.827286 520.755625,139.574813 527.006527,137.076554 C533.258384,134.576384 538.150768,131.244098 541.698964,127.07492 C541.698964,127.284143 541.486875,128.220393 541.073205,129.886536 C540.652848,131.5565 540.447446,132.808973 540.447446,133.637268 C540.447446,136.975286 541.798321,138.637607 544.511536,138.637607 L566.079679,138.637607 C570.032946,138.637607 572.32867,136.661929 572.952518,132.700063 L585.768634,51.1230714 C585.974036,49.8725089 585.661634,48.7279911 584.830473,47.6847411 C583.994536,46.6443571 582.955107,46.1217768 581.704545,46.1217768 Z M540.916527,107.696455 C535.60283,112.906018 529.196205,115.509366 521.694741,115.509366 C515.649241,115.509366 510.756857,113.845134 507.004214,110.509027 C503.252527,107.180563 501.377161,102.595804 501.377161,96.7566607 C501.377161,89.0517054 503.981464,82.5361696 509.191982,77.2224732 C514.395812,71.9087768 520.860714,69.2519286 528.571402,69.2519286 C534.400036,69.2519286 539.245607,70.9715714 543.104295,74.4089464 C546.956295,77.8472768 548.888027,82.5896696 548.888027,88.6323036 C548.887071,96.1328125 546.229268,102.489759 540.916527,107.696455 Z" id="Shape" fill="#009CDE"> </path> <path d="M226.639375,46.1217768 L202.885375,46.1217768 C199.963893,46.1217768 198.196482,49.5601071 197.570723,56.4367679 C191.944625,48.1060536 182.04617,43.9330536 167.877268,43.9330536 C152.874339,43.9330536 140.109813,49.5601071 129.588464,60.8123036 C119.06425,72.0654554 113.805009,85.2990625 113.805009,100.508348 C113.805009,112.80475 117.400018,122.597161 124.58908,129.887491 C131.778143,137.185464 141.41292,140.827286 153.500098,140.827286 C159.331598,140.827286 165.378054,139.574813 171.628,137.076554 C177.878902,134.576384 182.880196,131.244098 186.630929,127.07492 C185.794991,129.575089 185.380366,131.763813 185.380366,133.637268 C185.380366,136.975286 186.734107,138.637607 189.4435,138.637607 L211.009732,138.637607 C214.965866,138.637607 217.260634,136.661929 217.886393,132.700063 L230.700598,51.1230714 C230.906,49.8725089 230.593598,48.7279911 229.763393,47.6847411 C228.929366,46.6443571 227.888982,46.1217768 226.639375,46.1217768 Z M185.850402,107.851223 C180.53575,112.962384 174.02117,115.509366 166.316214,115.509366 C160.269759,115.509366 155.425143,113.845134 151.781411,110.509027 C148.132902,107.180563 146.311036,102.595804 146.311036,96.7566607 C146.311036,89.0517054 148.914384,82.5361696 154.125857,77.2224732 C159.331598,71.9087768 165.791723,69.2519286 173.504321,69.2519286 C179.335821,69.2519286 184.180437,70.9715714 188.039125,74.4089464 C191.891125,77.8472768 193.820946,82.5896696 193.820946,88.6323036 C193.820946,96.3420357 191.164098,102.751527 185.850402,107.851223 Z" id="Shape" fill="#003087"> </path> <path d="M464.337964,8.45777679 C456.314875,2.94154464 445.846071,0.176741071 432.926777,0.176741071 L383.230054,0.176741071 C379.05992,0.176741071 376.767062,2.15719643 376.353393,6.11333036 L356.037723,133.637268 C355.826589,134.889741 356.138991,136.035214 356.974929,137.076554 C357.802268,138.119804 358.849339,138.638563 360.099902,138.638563 L385.728312,138.638563 C388.228482,138.638563 389.894625,137.285777 390.729607,134.576384 L396.356661,98.3215357 C396.563018,96.6553929 397.292911,95.3006964 398.544429,94.2574464 C399.794991,93.2161071 401.356045,92.5349375 403.233321,92.2225357 C405.107732,91.913 406.876098,91.7572768 408.547018,91.7572768 C410.212205,91.7572768 412.19075,91.8623661 414.483607,92.0696786 C416.775509,92.2779464 418.238161,92.3792143 418.859143,92.3792143 C436.780687,92.3792143 450.843545,87.3301518 461.055357,77.2215179 C471.265259,67.1167054 476.370687,53.1044821 476.370687,35.1819821 C476.371643,22.8903571 472.358187,13.9826071 464.337964,8.45777679 Z M432.301018,59.8750982 C427.716259,63.0000714 420.839598,64.5620804 411.672946,64.5620804 L401.670357,64.8754375 L406.985009,31.43125 C407.397723,29.1412589 408.751464,27.9948304 411.047187,27.9948304 L416.671375,27.9948304 C421.254223,27.9948304 424.900821,28.2030982 427.614036,28.6186786 C430.318652,29.0390357 432.926777,30.3373661 435.426946,32.5251339 C437.929027,34.7138571 439.177679,37.8923304 439.177679,42.0595982 C439.177679,50.8106696 436.882911,56.7482143 432.301018,59.8750982 Z" id="Shape" fill="#009CDE"> </path> </g> </g> </g> </g></svg>
+    </div>
+</footer>
+
+</body>
+</html>
