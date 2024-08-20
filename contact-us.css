@@ -4,8 +4,9 @@ body {
     padding: 0;
     background-color: #fff;
     color: #000;
-    background-image: url('./imgs/world-map.png'); 
+    background-image: url('./imgs/world-map.png');
 }
+
 /* start header */
 
 
@@ -163,7 +164,7 @@ header {
     padding: 50px;
     background: rgba(169, 169, 169, 0.408);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    
+
     background-size: cover;
     background-position: center;
 }
@@ -193,7 +194,8 @@ header {
     gap: 20px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     width: calc(50% - 20px);
     padding: 10px;
     border: none;
@@ -225,6 +227,7 @@ header {
     background-color: #f4f4f4;
     color: #000;
 }
+
 @media (max-width: 415px) {
     .contact-section {
         padding: 20px;
@@ -237,10 +240,10 @@ header {
     .contact-info p {
         font-size: 14px;
     }
-    .contact-form input{
+
+    .contact-form input {
         width: 100%;
     }
-    .contact-section{
-        
-    }
+
+    .contact-section {}
 }

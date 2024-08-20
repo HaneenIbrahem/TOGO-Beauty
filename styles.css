@@ -50,6 +50,7 @@ body {
 .signup-btn:hover {
     background-color: #f4f4f4;
 }
+
 .modal .login-button {
     margin-left: 40px;
     margin-right: 20px;
@@ -62,9 +63,10 @@ body {
 }
 
 @media (max-width:950px) {
-    .user-links a{
+    .user-links a {
         display: none;
     }
+
     .bars-menu {
         display: inline-block;
         order: 1;
@@ -72,13 +74,15 @@ body {
 }
 
 @media (max-width:400px) {
-    .user-links a{
+    .user-links a {
         display: none;
     }
+
     .bars-menu {
         display: inline-block;
         order: 1;
     }
+
     .shipping-notice {
         display: none;
     }
@@ -207,24 +211,25 @@ header {
 }
 
 @media (max-width:950px) {
-    .navbar-left a img{
+    .navbar-left a img {
         display: none;
     }
-    
+
     .navbar-left .logo span {
         font-size: 20px;
         font-weight: bold;
     }
-    .nav-links li{
+
+    .nav-links li {
         display: none;
     }
 
-@media (max-width:415px) {
+    @media (max-width:415px) {
 
-    .navbar-right input{
-        display: none;
+        .navbar-right input {
+            display: none;
+        }
     }
-}
 }
 
 /* end of header */
@@ -276,6 +281,7 @@ header {
     text-decoration: none;
     border-radius: 5px;
 }
+
 .button:hover {
     background-color: #f4f4f4;
     color: #000;
@@ -283,61 +289,77 @@ header {
 }
 
 @media (max-width: 950px) {
+
     .left-column,
     .right-column {
         width: 100%;
-        margin-bottom: 20px; /* Add space between columns */
+        margin-bottom: 20px;
+        /* Add space between columns */
     }
 
     .text-content {
         width: 100%;
-        left: 5%; /* Adjust positioning */
-        transform: translateY(0); /* Remove vertical centering */
-        text-align: center; /* Center text */
+        left: 5%;
+        /* Adjust positioning */
+        transform: translateY(0);
+        /* Remove vertical centering */
+        text-align: center;
+        /* Center text */
     }
 
     .text-content h2 {
-        font-size: 20px; /* Adjust font size */
+        font-size: 20px;
+        /* Adjust font size */
     }
 
     .text-content p {
-        font-size: 14px; /* Adjust font size */
+        font-size: 14px;
+        /* Adjust font size */
     }
 
     .button {
-        padding: 8px 16px; /* Adjust button padding */
+        padding: 8px 16px;
+        /* Adjust button padding */
     }
 }
 
 @media (max-width: 494px) {
-    .left-column div p{
-        display: none; 
+    .left-column div p {
+        display: none;
     }
-    .right-column div p{
-        display: none; 
+
+    .right-column div p {
+        display: none;
     }
 }
+
 /* Responsive styles for max-width: 400px */
 @media (max-width: 400px) {
     .text-content {
         width: 100%;
-        left: 0; /* Align text to the edge */
-        text-align: center; /* Center text */
-        padding: 0 10px; /* Add some padding */
+        left: 0;
+        /* Align text to the edge */
+        text-align: center;
+        /* Center text */
+        padding: 0 10px;
+        /* Add some padding */
     }
 
     .text-content h2 {
-        font-size: 18px; /* Adjust font size */
+        font-size: 18px;
+        /* Adjust font size */
     }
 
     .text-content p {
-        font-size: 12px; /* Adjust font size */
+        font-size: 12px;
+        /* Adjust font size */
     }
 
     .button {
-        padding: 6px 12px; /* Adjust button padding */
+        padding: 6px 12px;
+        /* Adjust button padding */
     }
-    
+
     .right-column {
         display: none;
     }
@@ -346,36 +368,40 @@ header {
 /* end of public section */
 
 .features-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 40px 20px;
-  background-color: #f8f8f8; /* Light background color to match your beauty theme */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+    /* Light background color to match your beauty theme */
 }
 
 .feature-box {
-  text-align: center;
-  max-width: 250px;
+    text-align: center;
+    max-width: 250px;
 }
 
 .feature-box svg {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333; /* Darker color for heading */
-  margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    /* Darker color for heading */
+    margin-bottom: 10px;
 }
 
 p {
-  color: #666; /* Softer text color */
-  font-size: 16px;
-  line-height: 1.5;
+    color: #666;
+    /* Softer text color */
+    font-size: 16px;
+    line-height: 1.5;
 }
+
 /* enf of features section */
 
 .product-section {
@@ -405,7 +431,7 @@ p {
 
 .product-grid-container {
     /* max-width: 1300px;  */
-    margin: auto; 
+    margin: auto;
     position: relative;
     display: flex;
     align-items: center;
@@ -425,7 +451,7 @@ p {
 }
 
 .product-card {
-    width: calc( (100% - 90px) / 4 );
+    width: calc((100% - 90px) / 4);
     height: 280px;
     text-align: center;
     background-color: #fff;
@@ -477,86 +503,109 @@ p {
 
 .badge.discount {
     background-color: #28a745;
-    top: 35px; /* Adjusts for multiple badges */
+    top: 35px;
+    /* Adjusts for multiple badges */
 }
 
 @media (max-width: 950px) {
     .product-grid {
-        gap: 20px; /* Reduce gap between items */
+        gap: 20px;
+        /* Reduce gap between items */
     }
 
     .product-card {
-        width: calc((100% - 60px) / 3); /* Adjust width to fit 3 cards */
+        width: calc((100% - 60px) / 3);
+        /* Adjust width to fit 3 cards */
     }
 
     .product-card img {
-        width: 60%; /* Adjust image size */
+        width: 60%;
+        /* Adjust image size */
     }
 
     .product-card h3 {
-        font-size: 14px; /* Adjust font size */
+        font-size: 14px;
+        /* Adjust font size */
     }
 
     .product-card p {
-        font-size: 12px; /* Adjust font size */
+        font-size: 12px;
+        /* Adjust font size */
     }
 
     .badge {
-        font-size: 10px; /* Adjust badge font size */
+        font-size: 10px;
+        /* Adjust badge font size */
     }
 }
 
 @media (max-width: 950px) {
     .product-grid {
-        gap: 30px; /* Reduce gap between items */
+        gap: 30px;
+        /* Reduce gap between items */
     }
 
     .product-card {
-        width: calc((100% - 30px) / 2); /* Adjust width to fit 3 cards */
+        width: calc((100% - 30px) / 2);
+        /* Adjust width to fit 3 cards */
     }
+
     .product-card img {
-        width: 60%; /* Adjust image size */
+        width: 60%;
+        /* Adjust image size */
     }
 }
 
 /* Responsive styles for max-width: 400px */
 @media (max-width: 400px) {
     .tabs {
-        flex-direction: column; /* Stack tabs vertically */
+        flex-direction: column;
+        /* Stack tabs vertically */
     }
 
     .tab {
-        padding: 10px; /* Adjust padding */
-        font-size: 12px; /* Adjust font size */
+        padding: 10px;
+        /* Adjust padding */
+        font-size: 12px;
+        /* Adjust font size */
     }
 
     .product-grid {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
+        /* Stack items vertically */
         width: 100%;
     }
 
     .product-card {
         width: 100%;
-        height: auto; /* Allow height to adjust automatically */
-        margin-bottom: 20px; /* Add space between cards */
+        height: auto;
+        /* Allow height to adjust automatically */
+        margin-bottom: 20px;
+        /* Add space between cards */
     }
 
     .product-card img {
-        width: 50%; /* Full width image */
-        height: auto; /* Maintain aspect ratio */
+        width: 50%;
+        /* Full width image */
+        height: auto;
+        /* Maintain aspect ratio */
     }
 
     .product-card h3 {
-        font-size: 12px; /* Adjust font size */
+        font-size: 12px;
+        /* Adjust font size */
     }
 
     .product-card p {
-        font-size: 10px; /* Adjust font size */
+        font-size: 10px;
+        /* Adjust font size */
     }
 
     .badge {
-        font-size: 10px; /* Adjust badge font size */
-        padding: 3px 6px; /* Adjust badge padding */
+        font-size: 10px;
+        /* Adjust badge font size */
+        padding: 3px 6px;
+        /* Adjust badge padding */
     }
 }
 
@@ -718,19 +767,22 @@ p {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 /* Modal content */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* Center modal with margin */
+    margin: 5% auto;
+    /* Center modal with margin */
     padding: 20px;
     border: 1px solid #888;
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add subtle shadow */
 }
 
 /* Close button */
@@ -780,12 +832,6 @@ p {
 
 
 /* start of hero-section */
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
 
 .hero-section {
     position: relative;
@@ -795,8 +841,8 @@ p {
     padding: 80px;
     background-color: #f4d2dd;
     background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2), transparent 40%),
-                      radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.15), transparent 50%),
-                      radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.1), transparent 40%);
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.15), transparent 50%),
+        radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.1), transparent 40%);
     color: black;
     overflow: hidden;
 }
@@ -863,14 +909,18 @@ p {
 .hero-images img:first-child {
     transform: rotate(5deg);
 }
+
 .hero-section::before,
 .hero-section::after {
     content: '';
     position: absolute;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2); /* Light white transparent circles */
-    z-index: 1; /* Positioned behind the content */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Light white transparent circles */
+    z-index: 1;
+    /* Positioned behind the content */
 }
+
 .hero-section::before {
     width: 200px;
     height: 200px;
@@ -895,7 +945,7 @@ p {
     text-align: center;
     padding: 50px;
     background: linear-gradient(to right, #f0f0f0, #ffffff);
-    overflow: hidden; /* Ensure lines don't overflow the section */
+    overflow: hidden;
 }
 
 .testimonial-section::before,
@@ -923,7 +973,7 @@ p {
 .testimonial-section h2,
 .testimonial-section p {
     position: relative;
-    z-index: 2; /* Ensure text is above the background lines */
+    z-index: 2;
 }
 
 .testimonial-container {
@@ -1033,7 +1083,7 @@ p {
     }
 
     .newsletter-form input[type="email"] {
-        width: calc(100% - 60px); /* Adjust for button width */
+        width: calc(100% - 60px);
     }
 
     .newsletter-form button {
@@ -1056,12 +1106,12 @@ p {
         flex-direction: column;
         width: 100%;
         max-width: 100%;
-        box-shadow: none; /* Optional: Remove shadow on smaller screens */
+        box-shadow: none;
     }
 
     .newsletter-form input[type="email"] {
         width: 100%;
-        margin-bottom: 10px; /* Add margin to separate input and button */
+        margin-bottom: 10px;
     }
 
     .newsletter-form button {
@@ -1081,8 +1131,8 @@ p {
 }
 
 .product-item {
-    width: 150px; /* Set a fixed width for each item */
-    height: 150px; /* Set a fixed height for each item */
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1092,9 +1142,9 @@ p {
 }
 
 .product-item img {
-    width: 100%; /* Ensure the image fills the width */
-    height: 100%; /* Ensure the image fills the height */
-    object-fit: cover; /* Ensures the image scales and crops to fill the box */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -1155,9 +1205,9 @@ p {
     margin-right: 10px;
 }
 
-.footer-section p, .footer-section a {
+.footer-section p,
+.footer-section a {
     color: black;
 }
 
 /* end of footer section */
-
