@@ -1,6 +1,3 @@
-
-
-
 let currentSlideIndex = 0;
 
 function showSlides(n) {
@@ -31,49 +28,73 @@ let slideInterval = setInterval(() => {
 // Initialize the first slide
 showSlides(currentSlideIndex);
 
+// Modal handling
+const modals = {
+    features: document.getElementById("featuresModal"),
+    popup: document.getElementById("popupModal")
+};
 
-// Get modal element
-var modal = document.getElementById("featuresModal");
+const buttons = {
+    features: document.querySelector(".view-features-button"),
+    popup: document.querySelector(".bars-menu")
+};
 
-// Get button that opens the modal
-var btn = document.querySelector(".view-features-button");
+const closeButtons = {
+    features: document.querySelector("#featuresModal .close"),
+    popup: document.querySelector("#popupModal .close")
+};
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
+// Function to open a specific modal
+function openModal(modal) {
+    modals[modal].style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+// Function to close a specific modal
+function closeModal(modal) {
+    modals[modal].style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+// Event listeners for opening modals
+buttons.features.onclick = function() {
+    openModal('features');
+}
+
+buttons.popup.onclick = function() {
+    openModal('popup');
+}
+
+// Event listeners for closing modals
+Object.keys(closeButtons).forEach(modal => {
+    closeButtons[modal].onclick = function() {
+        closeModal(modal);
     }
-}
-// ----------------------------------------------------
+});
 
+// Click outside modal to close
+window.onclick = function(event) {
+    Object.keys(modals).forEach(modal => {
+        if (event.target == modals[modal]) {
+            closeModal(modal);
+        }
+    });
+}
+
+// Fetch and display products
 const apiUrl = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
-let products = []; 
-let products1 = []; 
-let products2 = []; 
-let products3 = []; 
+let products = [];
+let products1 = [];
+let products2 = [];
+let products3 = [];
 
 const fetchProducts = async () => {
     try {
         const response = await fetch(apiUrl);
         products = await response.json();
-         products1 = products.slice(0, 4); 
-         products2 = products.slice(5, 9);
-         products3 = products.slice(10, 14);
+        products1 = products.slice(0, 4);
+        products2 = products.slice(5, 9);
+        products3 = products.slice(10, 14);
 
-        displayProducts(products1); 
+        displayProducts(products1);
     } catch (error) {
         console.error("Error fetching the products:", error);
     }
@@ -81,7 +102,7 @@ const fetchProducts = async () => {
 
 const displayProducts = (products) => {
     const productGrid = document.querySelector(".product-grid");
-    productGrid.innerHTML = ''; 
+    productGrid.innerHTML = '';
 
     products.forEach((product) => {
         productGrid.innerHTML += `
@@ -101,7 +122,6 @@ document.querySelectorAll('.tab').forEach(tab => {
         document.querySelector('.tab.active').classList.remove('active');
         this.classList.add('active');
 
-        // Determine which set of products to display based on the tab clicked
         const tabId = this.dataset.tab;
 
         switch (tabId) {
@@ -115,29 +135,9 @@ document.querySelectorAll('.tab').forEach(tab => {
                 displayProducts(products3);
                 break;
             default:
-                displayProducts(products1); // Default to New Arrivals
+                displayProducts(products1);
         }
     });
 });
 
 fetchProducts();
-
-var modal = document.getElementById("popupModal");
-
-var barsMenu = document.querySelector(".bars-menu");
-
-var span = document.querySelector(".close");
-
-barsMenu.onclick = function() {
-    modal.style.display = "block";
-}
-
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
