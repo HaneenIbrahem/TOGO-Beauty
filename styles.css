@@ -40,7 +40,7 @@ body {
 
 .signup-btn {
     background-color: #db7093;
-    color: #fff;
+    color: #000;
     padding: 5px 15px;
     border-radius: 20px;
     text-decoration: none;
@@ -49,6 +49,12 @@ body {
 
 .signup-btn:hover {
     background-color: #f4f4f4;
+}
+.modal .login-button {
+    margin-left: 40px;
+    margin-right: 20px;
+    color: #333;
+    text-decoration: none;
 }
 
 .bars-menu {
@@ -149,7 +155,7 @@ header {
 
 .dropdown-content a {
     color: #333;
-    padding: 12px 16px;
+    padding: 10px 14px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -420,7 +426,7 @@ p {
 
 .product-card {
     width: calc( (100% - 90px) / 4 );
-    height: 250px;
+    height: 280px;
     text-align: center;
     background-color: #fff;
     border-radius: 10px;
