@@ -451,18 +451,22 @@ header {
         transform: translateX(0); /* Slide the sidebar back into view */
     }
     .back-button {
-        display: block;
-        background-color: #db7093;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        font-size: 16px;
-        border-radius: 5px;
-        width: 10%; /* Full width */
-        text-align: center;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        background-color: #db7093; 
+        color: white; 
+        border: none; 
+        padding: 10px 15px; 
+        margin-bottom: 10px; 
+        cursor: pointer; 
+        font-size: 16px; 
+        border-radius: 5px; 
+        width: auto; 
+        text-align: center; 
+        line-height: 1; 
     }
+    
     
     .back-button:hover {
         background-color: #c95a80;
