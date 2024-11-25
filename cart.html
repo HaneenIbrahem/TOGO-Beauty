@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <header>
+    <!-- <h1>Your Cart</h1> -->
+    <!-- Main navigation bar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+          <a href="#" class="logo">
+            <img src="./imgs/logo.png" alt="To Go Beauty logo" />
+            <span>To Go Beauty</span>
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Categories</a>
+            <ul class="dropdown-content">
+              <li><a href="shop.html">Blush</a></li>
+              <li><a href="shop.html">Bronzer</a></li>
+              <li><a href="shop.html">Eyebrow</a></li>
+              <li><a href="shop.html">Eyeliner</a></li>
+              <li><a href="shop.html">Eyeshadow</a></li>
+              <li><a href="shop.html">Foundation</a></li>
+              <li><a href="shop.html">Lip liner</a></li>
+              <li><a href="shop.html">Lipstick</a></li>
+              <li><a href="shop.html">Mascara</a></li>
+              <li><a href="shop.html">Nail polish</a></li>
+            </ul>
+          </li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+        <div class="navbar-right">
+          <input type="text" placeholder="Search..." />
+          <!-- <a href="#" class="cart-icon">
+            <span class="cart-count">0</span>
+          </a> -->
+        </div>
+      </nav>
+  </header>
+  <main>
+    <div class="cart-container">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Cart items will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+    <div class="cart-summary">
+      <h3>Summary</h3>
+      <p><strong>Total:</strong> $<span id="cart-total">0.00</span></p>
+      <button id="checkout-btn">Checkout</button>
+    </div>
+  </main>
+  <script src="cart.js"></script>
+</body>
+</html>

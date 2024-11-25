@@ -39,9 +39,12 @@ const getProducts = async () => {
     document.getElementById("loader").style.display = "none"; // Hide the loader
   }
 };
+const cart = [];
+let currentProducts = [];
 
 const displayProducts = async (page = 1) => {
   const products = await getProducts();
+  currentProducts = products;
 
   if (products.length > 0) {
     const startIndex = (page - 1) * productsPerPage;
@@ -55,13 +58,19 @@ const displayProducts = async (page = 1) => {
                         <img src="${product.image_link}" alt="${product.name}">
                         <div class="product-details">
                             <h2>${product.name}</h2>
-                            <p class="product-description">${
-                              product.description
-                            }</p>
+                            
                             <p class="price">$${product.price}</p>
+                            <p class="price">$${product.price}</p>
+                           
                             <p class="tags">${product.tag_list
                               .map((tag) => `<span>${tag}</span>`)
                               .join(" ")}</p>
+                              <button class="add-to-cart" data-id="${product.id}">
+                Add to Cart
+              </button>
+              <button class="view" data-id="${product.id}">
+                View
+              </button>
                         </div>
                     </div>
                 `;
@@ -85,11 +94,65 @@ const displayProducts = async (page = 1) => {
       };
       document.querySelector(".product-container").appendChild(loadMore);
     }
+    // Add event listeners for "Add to Cart" buttons
+    const cartButtons = document.querySelectorAll(".add-to-cart");
+    cartButtons.forEach((button) =>
+      button.addEventListener("click", (event) => {
+        const productId = parseInt(event.target.getAttribute("data-id"), 10); // Convert to number
+        addToCart(productId);
+      })
+    );
+    // Add event listeners for "View" buttons
+    const viewButtons = document.querySelectorAll(".view");
+    viewButtons.forEach((button) =>
+      button.addEventListener("click", (event) => {
+        const productId = parseInt(event.target.getAttribute("data-id"), 10); // Convert to number
+        viewProductDetails(productId);
+      })
+    );
   } else {
     document.querySelector(".product-container").innerHTML =
       '<img src="./imgs/nproduct.png" alt="No Product found" style="width: 100%; height: auto;">';
   }
 };
+
+const viewProductDetails = (productId) => {
+  const product = currentProducts.find((item) => item.id === productId);
+  if (!product) {
+    alert("Product not found!");
+    return;
+  }
+
+  // Store product details in localStorage
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+  // Redirect to the details page
+  window.location.href = "product-details.html";
+};
+
+const addToCart = (productId) => {
+  const product = currentProducts.find((item) => item.id === productId); // Find product details
+  if (!product) {
+    alert("Product not found!");
+    return;
+  }
+
+  const cartItem = cart.find((item) => item.id === productId);
+  if (cartItem) {
+    cartItem.quantity++;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: parseFloat(product.price) || 0,
+      quantity: 1,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${product.name} has been added to the cart!`);
+};
+
 
 const applyFilters = () => {
   const selectedCategory = document.querySelector(

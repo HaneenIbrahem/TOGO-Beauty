@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+              <!-- Menu icon -->
+              <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+          <!-- <div class="user-links">
+            <a href="login.html">Login</a>
+            <a href="login.html" class="signup-btn">Sign Up</a>
+          </div> -->
+        </div>
+  
+        <!-- Main navigation bar -->
+        <nav class="navbar">
+          <div class="navbar-left">
+            <a href="#" class="logo">
+              <img src="./imgs/logo.png" alt="To Go Beauty logo" />
+              <span>To Go Beauty</span>
+            </a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a href="#">Categories</a>
+              <ul class="dropdown-content">
+                <li><a href="shop.html">Blush</a></li>
+                <li><a href="shop.html">Bronzer</a></li>
+                <li><a href="shop.html">Eyebrow</a></li>
+                <li><a href="shop.html">Eyeliner</a></li>
+                <li><a href="shop.html">Eyeshadow</a></li>
+                <li><a href="shop.html">Foundation</a></li>
+                <li><a href="shop.html">Lip liner</a></li>
+                <li><a href="shop.html">Lipstick</a></li>
+                <li><a href="shop.html">Mascara</a></li>
+                <li><a href="shop.html">Nail polish</a></li>
+              </ul>
+            </li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+          <div class="navbar-right">
+            <input type="text" placeholder="Search..." />
+            <a href="cart.html" class="cart-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                />
+              </svg>
+              <span class="cart-count">0</span>
+            </a>
+          </div>
+        </nav>
+  <div id="product-details" class="product-details-container">
+    <!-- Product details will be injected here -->
+  </div>
+
+  <script>
+    // Retrieve product details from localStorage
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+
+    if (product) {
+      const detailsContainer = document.getElementById("product-details");
+      detailsContainer.innerHTML = `
+        <div class="product-details">
+          <img id="product-image" src="${product.image_link || 'default_image.jpg'}" alt="${product.name}">
+          <h1 id="product-name">${product.name}</h1>
+          <p id="product-price" class="price">Price: $${product.price || "N/A"}</p>
+          <p id="product-description" class="description">${product.description || "No description available"}</p>
+          <p class="tags">${product.tag_list ? product.tag_list.map((tag) => `<span>${tag}</span>`).join(" ") : ''}</p>
+          <button onclick="window.history.back()">Back to Products</button>
+          <button id="add-to-cart">Add to Cart</button>
+        </div>
+      `;
+
+      // Add to cart functionality
+      document.getElementById("add-to-cart").addEventListener("click", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItem = cart.find((item) => item.id === product.id);
+
+        if (cartItem) {
+          cartItem.quantity++; // If the item is already in the cart, increase the quantity
+        } else {
+          // If it's a new product, add it to the cart
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: 1,
+          });
+        }
+
+        // Save the updated cart back to local storage
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${product.name} has been added to the cart!`);
+      });
+    } else {
+      document.getElementById("product-details").innerHTML = `<p>Product details not available.</p>`;
+    }
+  </script>
+</body>
+</html>
